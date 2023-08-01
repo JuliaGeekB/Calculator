@@ -19,11 +19,21 @@ public final class Calculator implements iCalculable {
 
     @Override
     public iCalculable multi(int realComponentNext, int imaginaryComponentNext) {
-         realComponent1 = realComponent1*realComponentNext-imaginaryComponent1*imaginaryComponentNext;
+         int a= realComponent1*realComponentNext-imaginaryComponent1*imaginaryComponentNext;
          imaginaryComponent1 = (realComponent1*imaginaryComponentNext)+(imaginaryComponent1*realComponentNext);
+         realComponent1=a;
          return this;
     }
 
+    @Override
+    public iCalculable division(int realComponentNext, int imaginaryComponentNext) {
+        int b = (realComponent1*realComponentNext+imaginaryComponent1*imaginaryComponentNext)/(realComponentNext*realComponentNext+imaginaryComponentNext*imaginaryComponentNext);
+        // добавить проверку деления на 0
+        imaginaryComponent1 = (imaginaryComponent1*realComponentNext-realComponent1*imaginaryComponentNext)/(realComponentNext*realComponentNext+imaginaryComponentNext*imaginaryComponentNext);
+        realComponent1=b;
+        return this;
+    }  
+    
     @Override
     public int getResultReal() {
         return (realComponent1);
@@ -31,14 +41,8 @@ public final class Calculator implements iCalculable {
 
   
     @Override
-    public int getResulImaginary() {
+    public int getResultImaginary() {
         return (imaginaryComponent1);
     }
 
-    @Override
-    public iCalculable division(int realComponentNext, int imaginaryComponentNext) {
-        realComponent1 = ((realComponent1*realComponentNext+imaginaryComponent1*imaginaryComponentNext)/(realComponent1*realComponent1+imaginaryComponentNext*imaginaryComponentNext));
-        imaginaryComponent1 = (imaginaryComponent1*realComponentNext-realComponent1*imaginaryComponentNext)/(realComponent1*realComponent1+imaginaryComponentNext*imaginaryComponentNext);
-        return this;
-    }
 }

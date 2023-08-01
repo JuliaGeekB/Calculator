@@ -40,7 +40,7 @@ public class ViewCalculator {
                 }
                 if (cmd.equals("=")) {
                     int resultReal = calculator.getResultReal();
-                    int resultImaginary = calculator.getResulImaginary();
+                    int resultImaginary = calculator.getResultImaginary();
                     System.out.println("Результат \n" + resultReal + "+" + resultImaginary + "*i");
                     break;
                 }

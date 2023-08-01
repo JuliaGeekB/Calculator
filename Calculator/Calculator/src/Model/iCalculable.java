@@ -5,5 +5,5 @@ public interface iCalculable {
     iCalculable multi(int realComponentNext, int imaginaryComponentNext);
     iCalculable division(int realComponentNext, int imaginaryComponentNext);
     int getResultReal();
-    int getResulImaginary();
+    int getResultImaginary();
 }

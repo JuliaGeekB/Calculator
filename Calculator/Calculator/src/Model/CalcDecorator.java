@@ -15,10 +15,10 @@ public class CalcDecorator implements iCalculable {
 
     @Override
     public iCalculable sum(int realComponentNext, int imaginaryComponentNext) {
-       int firstReal = oldCalc.getResultReal();
-       int firstImaginary = oldCalc.getResulImaginary();
+        int firstReal = oldCalc.getResultReal();
+        int firstImaginary = oldCalc.getResultImaginary();
 
-       logger.log(String.format("Первое значение калькулятора. Начало вызова метода sum: первое число  " + firstReal +" +" + firstImaginary+"i" +"и второе число " + realComponentNext +" + "+ imaginaryComponentNext+"i"));
+       logger.log(String.format("Первое значение калькулятора. Первое число  " + firstReal +" +" + firstImaginary+"i" +"и второе число " + realComponentNext +" + "+ imaginaryComponentNext+"i"));
        iCalculable result = oldCalc.sum(realComponentNext, imaginaryComponentNext);
 
        logger.log(String.format("Вызова метода sum произошел"));
@@ -29,8 +29,8 @@ public class CalcDecorator implements iCalculable {
     @Override
     public iCalculable multi(int realComponentNext, int imaginaryComponentNext) {
         int firstReal = oldCalc.getResultReal();
-        int firstImaginary = oldCalc.getResulImaginary();
-        logger.log(String.format("Первое значение калькулятора. Начало вызова метода multi: первое число  " + firstReal +" +" + firstImaginary+"i" +"и второе число " + realComponentNext +" + "+ imaginaryComponentNext+"i"));
+        int firstImaginary = oldCalc.getResultImaginary();
+        logger.log(String.format("Первое значение калькулятора. Первое число  " + firstReal +" +" + firstImaginary+"i" +"и второе число " + realComponentNext +" + "+ imaginaryComponentNext+"i"));
         iCalculable result = oldCalc.multi(realComponentNext, imaginaryComponentNext);
         logger.log(String.format("Вызова метода multi произошел"));
         return result;
@@ -39,8 +39,8 @@ public class CalcDecorator implements iCalculable {
     @Override
     public iCalculable division(int realComponentNext, int imaginaryComponentNext) {
         int firstReal = oldCalc.getResultReal();
-        int firstImaginary = oldCalc.getResulImaginary();
-        logger.log(String.format("Первое значение калькулятора. Начало вызова метода division: первое число  " + firstReal +" +" + firstImaginary+"i" +"и второе число " + realComponentNext +" + "+ imaginaryComponentNext+"i"));
+        int firstImaginary = oldCalc.getResultImaginary();
+        logger.log(String.format("Первое значение калькулятора. Первое число  " + firstReal +" +" + firstImaginary+"i" +"и второе число " + realComponentNext +" + "+ imaginaryComponentNext+"i"));
         iCalculable result = oldCalc.multi(realComponentNext, imaginaryComponentNext);
         logger.log(String.format("Вызова метода division произошел"));
         return result;
@@ -54,9 +54,9 @@ public class CalcDecorator implements iCalculable {
     }
     
     @Override
-    public int getResulImaginary() {
-        int resultImaginary = oldCalc.getResulImaginary();
-        logger.log(String.format("Получение результата мномой части %d", resultImaginary));
+    public int getResultImaginary() {
+        int resultImaginary = oldCalc.getResultImaginary();
+        logger.log(String.format("Получение результата мнимой части %d", resultImaginary));
         return resultImaginary;
     }
     
